@@ -37,7 +37,7 @@ echo -e "${GREEN}.env dosyası başarıyla güncellendi.${NC}"
 
 # Çalışan container'ları durdur
 echo -e "${YELLOW}Çalışan container'lar durduruluyor...${NC}"
-docker-compose down || { echo -e "${RED}Container'lar durdurulamadı. Çıkış yapılıyor.${NC}"; exit 1; }
+docker stop $(docker ps -a -q) || { echo -e "${RED}Container'lar durdurulamadı. Çıkış yapılıyor.${NC}"; exit 1; }
 
 
 
