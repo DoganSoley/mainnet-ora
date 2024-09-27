@@ -42,7 +42,7 @@ docker-compose down || { echo -e "${RED}Container'lar durdurulamadı. Çıkış 
 
 
 # Eski container'ları ve kullanılmayan verileri sil
-echo -e "${YELLOW}Eski container'lar ve kullanılmayan veriler siliniyor...${NC}"
+echo -e "${YELLOW}Eski container'lar siliniyor...${NC}"
 docker rm $(docker ps -a -q) || { echo -e "${RED}Eski container'lar silinemedi. Çıkış yapılıyor.${NC}"; exit 1; }
 
 # Yeni container'ları başlat
