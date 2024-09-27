@@ -20,9 +20,27 @@ echo -e "${GREEN}.env dosyası başarıyla güncellendi.${NC}"
 echo -e "${YELLOW}Çalışan container'lar durduruluyor...${NC}"
 docker-compose down || { echo -e "${RED}Container'lar durdurulamadı. Çıkış yapılıyor.${NC}"; exit 1; }
 
+
+# 8. CRYPTOLOSS
+echo " "
+echo " "
+echo " "
+echo -e "${BLUE} ######  ########  ##    ## ########  ########  #######  ##        #######   ######   ######${NC}"
+echo -e "${BLUE}##    ## ##     ##  ##  ##  ##     ##    ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE}##       ##     ##   ####   ##     ##    ##    ##     ## ##       ##     ## ##       ##${NC}"
+echo -e "${BLUE}##       ########     ##    ########     ##    ##     ## ##       ##     ##  ######   ######${NC}"
+echo -e "${BLUE}##       ##   ##      ##    ##           ##    ##     ## ##       ##     ##       ##       ##${NC}"
+echo -e "${BLUE}##    ## ##    ##     ##    ##           ##    ##     ## ##       ##     ## ##    ## ##    ##${NC}"
+echo -e "${BLUE} ######  ##     ##    ##    ##           ##     #######  ########  #######   ######   ######${NC}"
+echo " "
+echo -e "${GREEN}#### Twitter : @Cryptoloss1 #####${NC}"
+echo " "
+echo " "
+
+
 # Eski container'ları ve kullanılmayan verileri sil
 echo -e "${YELLOW}Eski container'lar ve kullanılmayan veriler siliniyor...${NC}"
-docker system prune -af || { echo -e "${RED}Eski container'lar silinemedi. Çıkış yapılıyor.${NC}"; exit 1; }
+docker rm $(docker ps -a -q) || { echo -e "${RED}Eski container'lar silinemedi. Çıkış yapılıyor.${NC}"; exit 1; }
 
 # Yeni container'ları başlat
 echo -e "${YELLOW}Container'lar yeniden başlatılıyor...${NC}"
@@ -30,6 +48,8 @@ docker-compose up -d || { echo -e "${RED}Container'lar başlatılamadı. Çıkı
 
 # İşlemin başarılı olduğunu bildirme
 echo -e "${GREEN}Container'lar başarıyla yeniden başlatıldı.${NC}"
+
+echo -e "${GREEN}Log kontrol için : ${NC}""${YELLOW}docker logs -f ora-tora${NC}"
 
 # Container loglarını göster
 echo -e "${YELLOW}Container logları takip ediliyor...${NC}"
