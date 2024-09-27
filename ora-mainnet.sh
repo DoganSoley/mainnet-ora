@@ -4,6 +4,7 @@
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
 NC='\033[0m'
 
 # tora-docker-compose klasörüne git
@@ -56,4 +57,4 @@ echo -e "${GREEN}Log kontrol için : ${NC}""${YELLOW}docker logs -f ora-tora${NC
 
 # Container loglarını göster
 echo -e "${YELLOW}Container logları takip ediliyor...${NC}"
-docker-compose logs -f
+docker logs -f ora-tora
